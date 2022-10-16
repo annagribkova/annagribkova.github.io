@@ -51,6 +51,50 @@ header {
   text-decoration: none;
 }
 
+#hero-content {
+  width: 100%;
+  /* height: calc(100vh - 120px); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-image-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#hero-image-container #on-stage {
+  position: relative;
+  width: 50%;
+}
+
+#hero-image-container #on-stage img {
+  position: absolute;
+  left: 32%;
+  width: 100%;
+}
+
+#hero-image-container #portrait {
+  position: relative;
+  width: 30%;
+}
+
+#hero-image-container #portrait img {
+  position: absolute;
+  width: 100%;
+  margin-top: 18%;
+  border: 25px solid var(--white);
+}
+
+@media only screen and (min-width: 744px) {
+  #hero-image-container #portrait img {
+    border: 16px solid var(--white);
+  }
+}
+
 @media only screen and (max-width: 744px) {
   header {
     width: 20vw;
@@ -103,5 +147,9 @@ header {
 
   #menu-items li a {
     color: var(--text-color);
+  }
+
+  #hero-image-container #portrait img {
+    border: 11px solid var(--white);
   }
 }

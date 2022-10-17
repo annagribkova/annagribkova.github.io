@@ -29,6 +29,13 @@ body {
   height: 100%;
 }
 
+/* Fonts */
+
+p::first-letter {
+  color: #000000;
+  margin-left: 2em;
+}
+
 #navigation {
   position: sticky;
   top: 0px;

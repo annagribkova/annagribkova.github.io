@@ -8,6 +8,7 @@
   --white: #FFF9ED;
   --black: #000;
   --hero-background: #B47250;
+  --beginning-background: #FCD9B4;
   --font-family: 'Playfair Display', serif;
   --title-font: 'Amelaryas', serif;
   --hamburger-line-height: 1px;
@@ -110,6 +111,10 @@ nav {
   justify-content: center;
 }
 
+#hero-content {
+  margin-bottom: 50px;
+}
+
 #hero-image-container {
   position: absolute;
   width: 100%;
@@ -146,7 +151,7 @@ nav {
 }
 
 #portrait-subtitle #subtitle {
-  width: 50%;
+  width: 65%;
   line-height: 2;
   text-align: center;
 }
@@ -158,7 +163,6 @@ nav {
   font-size: 2vw;
 }
 
-/* #subtitle */
 #portrait-subtitle #portrait {
   width: 35%;
   padding-right: 10%;
@@ -171,6 +175,19 @@ nav {
 
 #portrait img {
   border: 11px solid var(--white);
+}
+
+/* BEGINNING */
+
+#beginning-content {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--beginning-background);
+}
+
+#bio-image, #beginning-text, #beginnin-title {
+  width: 30%;
 }
 
 @media only screen and (min-width: 744px) {

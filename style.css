@@ -39,6 +39,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: var(--hero-background);
+  z-index: 5;
 }
 
 nav {
@@ -101,8 +102,9 @@ nav {
   margin-top: var(--hamburger-margin);
 }
 
+/* HERO SECTION */
 
-/* #hero-content, #hero-image-container {
+#hero-content, #hero-image-container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -111,10 +113,12 @@ nav {
 #hero-image-container {
   position: absolute;
   width: 100%;
+  padding-top: 2vw;
+  z-index: -1;
 }
 
 #hero-image-container #on-stage {
-  width: 60%;
+  width: 50%;
   object-fit: cover;
 }
 
@@ -126,18 +130,54 @@ nav {
 }
 
 #hero-content h1 {
-  font-size: 10rem;
+  font-size: 8vw;
   font-family: var(--title-font);
   color: white;
   line-height: 1.4;
-} */
+  z-index: 2;
+}
 
+#portrait-subtitle {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin-top: 10px;
+}
 
-/* @media only screen and (min-width: 744px) {
-  #hero-image-container #portrait img {
+#portrait-subtitle #subtitle {
+  width: 50%;
+  line-height: 2;
+  text-align: center;
+}
+
+#portrait-subtitle #subtitle h2 {
+  width: 100%;
+  font-family: var(--title-font);
+  color: var(--white);
+  font-size: 2vw;
+}
+
+/* #subtitle */
+#portrait-subtitle #portrait {
+  width: 35%;
+  padding-right: 10%;
+}
+
+#portrait img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#portrait img {
+  border: 11px solid var(--white);
+}
+
+@media only screen and (min-width: 744px) {
+  #portrait img {
     border: 9px solid var(--white);
   }
-} */
+}
 
 @media only screen and (max-width: 744px) {
   #navigation {
@@ -196,12 +236,12 @@ nav {
     color: var(--text-color);
   }
 
-    .menu li a {
-      text-decoration: none;
-      color: var(--text-color);
-    }
+  .menu li a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
 
-  /* #hero-image-container #portrait img {
+  #portrait img {
     border: 5px solid var(--white);
-  } */
+  }
 }

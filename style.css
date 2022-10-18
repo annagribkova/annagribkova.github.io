@@ -216,6 +216,30 @@ nav {
   }
 }
 
+#menu-items li a:visited {
+  color: #FFF9ED;
+  text-decoration: none;
+}
+
+p::first-letter {
+  color: #000000;
+  margin-left: 2em;
+}
+
+.beginningtxt {
+  position: absolute;
+  width: 979px;
+  height: 440px;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
 @media only screen and (max-width: 744px) {
   #navigation {
     width: 18vw;

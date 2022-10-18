@@ -193,8 +193,21 @@ nav {
   background-color: var(--beginning-background);
 }
 
-#bio-image, #beginning-text, #beginnin-title {
-  width: 30%;
+#bio-image {
+  width: 20%;
+}
+
+#beginning-text {
+  width: 60%;
+  padding: 0 4%;
+}
+
+#beginning-text p {
+  font-size: 30px;
+}
+
+#beginnin-title {
+  width: 20%;
 }
 
 @media only screen and (min-width: 744px) {

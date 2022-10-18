@@ -5,23 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./main.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="./style.css">
     <title>Hannah Hrybkova</title>
 </head>
 <body id="main">
-  <section id="hero">
-    <header>
-      <div id="nav-background"></div>
-      <nav id="navigation">
-        <div aria-label="mobile menu" id="nav-toggle">
-          <div class="toggle-line"></div>
-          <div class="toggle-line"></div>
-          <div class="toggle-line"></div>
-        </div>
-        <ul id="menu-items" class="navbar">
+    <header id="navigation">
+      <nav>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
           <li><a href="#about">About</a></li>
           <li><a href="#career">Career</a></li>
           <li><a href="#photos">Photos</a></li>
@@ -33,21 +31,34 @@
     </header>
     <div id="hero-content">
       <div id="hero-image-container">
+        <img id="on-stage" src="./media/hannahonthestage.jpg" alt="Hannah on the stage">
+      </div>
+      <div id="hero-description">
+        <div id="title">
+          <h1>Hanna</h1>
+        </div>
+        <div id="portrait-subtitle">
+          <div id="subtitle">
+            <h2>WORLD CLASS YOUNG ARTIST</h2>
+          </div>
+          <div id="portrait">
+            <img src="./media/hannaportrait.jpg" alt="">
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
-  <h1>
-    Beginning
-  </h1>
-  <p>
-    Born in Minsk, Hanna began studying violin at the Akhremchik Gymnasium of Arts with Galina Goncharova and later moved
-    to Saint-Petersburg where she graduated from the Special School of Music, studio of Prof. Savely Shalman, and the St.
-    Petersburg Rimsky-Korsakov Conservatory, studio of Ilya Ioff. Hanna also completed her bachelor’s degree as a Woodruff
-    Scholar at the Schwob School of Music where she studied with Professor Sergiu Schwartz. After a year in Los Angeles,
-    studying at UCLA with Professor Movses Pogossian and Varty Manouelian, and playing with the VEM Ensemble-in-Residence,
-    Hanna moved to Houston, TX where she is currently pursuing her Graduate Performance Certificate in the studio of Dr.
-    Kirsten Yon.
-  </p>
+    <div id="beginning-content">
+      <div id="bio-image"></div>
+      <div id="beginning-text">
+        <p>Born in Minsk, Hanna began studying violin at the Akhremchik Gymnasium of Arts with Galina Goncharova and later moved to
+        Saint-Petersburg where she graduated from the Special School of Music, studio of Prof. Savely Shalman, and the St.
+        Petersburg Rimsky-Korsakov Conservatory, studio of Ilya Ioff. Hanna also completed her bachelor's degree as a Woodruff
+        Scholar at the Schwob School of Music where she studied with Professor Sergiu Schwartz. After a year in Los Angeles,
+        studying at UCLA with Professor Movses Pogossian and Varty Manouelian, and playing with the VEM Ensemble-in-Residence,
+        Hanna moved to Houston, TX where she is currently pursuing her Graduate Performance Certificate in the studio of Dr.
+        Kirsten Yon.</p>
+      </div>
+      <div id="beginnin-title"></div>
+    </div>
 </body>
 </html>

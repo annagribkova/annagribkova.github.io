@@ -187,57 +187,150 @@ nav {
 /* BEGINNING */
 
 #beginning-content {
+  background-color: var(--beginning-background);
+  padding-bottom: 90px;
+}
+
+#beginning-violin {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#beginning-violin img {
+  width: 80%;
+}
+
+#rotatedViolin {
+  display: none;
+}
+
+#beginning-main-content {
+  position: relative;
+  padding-top: 10%;
+  padding-right: 10%;
   display: flex;
   justify-items: center;
-  align-items: center;
-  background-color: var(--beginning-background);
+  align-items: flex-end;
 }
 
 #bio-image {
+  position: absolute;
+  display: flex;
   width: 20%;
+  margin-left: 10%;
+}
+
+#bio-image img {
+  width: 70%;
+  object-fit: cover;
 }
 
 #beginning-text {
-  width: 60%;
-  padding: 0 4%;
+  padding: 0 4% 0 30%;
+  display: flex;
+  align-items: flex-end;
 }
 
 #beginning-text p {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 #beginnin-title {
   width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-@media only screen and (min-width: 744px) {
+#beginnin-title h1 {
+  font-family: var(--font-family);
+  font-weight: 200;
+  font-size: 105px;
+  line-height: 1.25;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@media only screen and (min-width: 744px) and (max-width: 1100px) {
   #portrait img {
     border: 9px solid var(--white);
   }
-}
 
-#menu-items li a:visited {
-  color: #FFF9ED;
-  text-decoration: none;
-}
+  #beginning-content * {
+    margin: 0;
+    padding: 0;
+  }
 
-p::first-letter {
-  color: #000000;
-  margin-left: 2em;
-}
+  #beginning-content {
+    width: 100%;
+    height: calc(100vh - var(--nav-height-L));
+    display: flex;
+    flex-direction: row-reverse;
+    /* height: initial; */
+    padding-bottom: 30px;
+  }
 
-.beginningtxt {
-  position: absolute;
-  width: 979px;
-  height: 440px;
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  color: #000000;
+  #beginning-main-content {
+    align-items: flex-start;
+    padding: 0 0 0 10vw;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #beginning-violin {
+    display: none;
+  }
+
+  #rotatedViolin {
+    display: block;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    height: 100%;
+  }
+
+  #rotatedViolin img {
+   height: 100%;
+  }
+
+  #beginning-violin img {
+   width: 100%;
+   object-fit: contain;
+  }
+
+  #bio-image {
+    display: none;
+  }
+
+  #beginning-text {
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 70%;
+    /* height: 100%; */
+  }
+
+  #beginning-text p {
+    font-size: 2vw;
+  }
+
+  #beginnin-title {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  #beginnin-title h1 {
+    font-family: var(--font-family);
+    font-weight: 200;
+    font-size: 8vw;
+    line-height: 1.25;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
 }
 
 @media only screen and (max-width: 744px) {
@@ -304,5 +397,42 @@ p::first-letter {
 
   #portrait img {
     border: 5px solid var(--white);
+  }
+
+  #beginning-content * {
+    margin: 5% 0 0 0;
+    padding: 0;
+  }
+
+  #beginning-violin {
+    display: none;
+  }
+
+  #bio-image {
+    display: none;
+  }
+
+  #beginning-main-content {
+      padding: 0 5%;
+  }
+
+  #beginning-text {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  #beginnin-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  #beginnin-title h1 {
+    font-size: 15vw;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
   }
 }

@@ -184,6 +184,16 @@ nav {
   border: 11px solid var(--white);
 }
 
+#menu-items li a:visited {
+  color: #FFF9ED;
+  text-decoration: none;
+}
+
+p::first-letter {
+  color: #000000;
+  margin-left: 2em;
+}
+
 /* BEGINNING */
 
 #beginning-content {
@@ -210,34 +220,60 @@ nav {
   width: 20%;
 }
 
+/* Flex career */
+
+#flex-career {
+  display: flex;
+  background-color: #E9C3A9;
+  width: 100%;
+  justify-content: center;
+}
+
+.career-title {
+  width: 19%;
+  font-family: 'Italiana';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 150px;
+  color: black;
+  writing-mode: sideways-lr;
+  text-align: right;
+  padding-top: 5%;
+}
+
+.career-p1,
+.career-p2 {
+  width: 40%;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 30px;
+  color: black;
+  padding-top: 4%;
+  padding-left: 1%;
+  padding-bottom: 4%;
+  padding-right: 4%;
+}
+
+.career-p1 p:first-child,
+.career-p2 p:first-child {
+  margin-bottom: 40px;
+}
+
+element {
+  border: 0.5px solid #000000;
+  display: inline-block;
+  align-items: center;
+  margin: 4%;
+}
+
+/* MEDIA */
+
 @media only screen and (min-width: 744px) {
   #portrait img {
     border: 9px solid var(--white);
   }
-}
-
-#menu-items li a:visited {
-  color: #FFF9ED;
-  text-decoration: none;
-}
-
-p::first-letter {
-  color: #000000;
-  margin-left: 2em;
-}
-
-.beginningtxt {
-  position: absolute;
-  width: 979px;
-  height: 440px;
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  color: #000000;
 }
 
 @media only screen and (max-width: 744px) {
@@ -305,48 +341,4 @@ p::first-letter {
   #portrait img {
     border: 5px solid var(--white);
   }
-}
-
-/* Flex career */ 
-
-#flex-career {
-  display: flex;
-  background-color: #E9C3A9;
-  width: 100%;
-  justify-content: center;
-} 
-
-.career-p1-firstletter {
-  margin-left: 2em;
-  margin-top: 1em;
-}
-.career-title {
-  width: 19%;
-  font-family: 'Italiana';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 150px;
-  color: black;
-  writing-mode: vertical-lr;
-  padding-top: 5%;
-}
-
-.career-p1, .career-p2 {
-  width: 40%;
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 23px;
-  line-height: 30px;
-  color: black;
-  padding-top: 4%;
-  padding-left: 1%;
-  padding-bottom: 4%;
-  padding-right: 4%;
-}
-element {
-  border: 0.5px solid #000000;
-  display: inline-block;
-  align-items: center;
-  margin: 4%;
 }

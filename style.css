@@ -306,3 +306,47 @@ p::first-letter {
     border: 5px solid var(--white);
   }
 }
+
+/* Flex career */ 
+
+#flex-career {
+  display: flex;
+  background-color: #E9C3A9;
+  width: 100%;
+  justify-content: center;
+} 
+
+.career-p1-firstletter {
+  margin-left: 2em;
+  margin-top: 1em;
+}
+.career-title {
+  width: 19%;
+  font-family: 'Italiana';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 150px;
+  color: black;
+  writing-mode: vertical-lr;
+  padding-top: 5%;
+}
+
+.career-p1, .career-p2 {
+  width: 40%;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 30px;
+  color: black;
+  padding-top: 4%;
+  padding-left: 1%;
+  padding-bottom: 4%;
+  padding-right: 4%;
+}
+element {
+  border: 0.5px solid #000000;
+  display: inline-block;
+  align-items: center;
+  margin: 4%;
+}

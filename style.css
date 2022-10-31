@@ -337,6 +337,11 @@ nav {
 
   #beginning-content {
     padding: 5% 0 0 0;
+    background: rgb(252, 217, 180);
+    background: -moz-linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
+    background: linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcd9b4", endColorstr="#b47250", GradientType=1);
   }
 
   #beginning-violin {
@@ -352,6 +357,11 @@ nav {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
+  }
+
+  #beginning-text p {
+    font-size: 4vw;
+    line-height: 5vw;
   }
 
   #beginnin-title {
@@ -382,4 +392,8 @@ nav {
     height: 100%;
     object-fit: contain;
   }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+
 }

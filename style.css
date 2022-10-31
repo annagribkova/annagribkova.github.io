@@ -9,13 +9,18 @@
   --black: #000;
   --hero-background: #B47250;
   --beginning-background: #FCD9B4;
+  --career-background: #E9C3A9;
+  --menu-hover-color: #99522E;
+  --menu-font-size: 20px;
+  --career-font: 23px;
   --font-family: 'Playfair Display', serif;
   --title-font: 'Amelaryas', serif;
   --hamburger-line-height: 1px;
   --hamburger-width: 18px;
   --hamburger-margin: 6px;
-  --nav-height-L: 120px;
+  --nav-height-L: 100px;
   --nav-height-S: 60px;
+  --side-padding: 10%;
 }
 
 * {
@@ -36,11 +41,22 @@ p::first-letter {
   margin-left: 2em;
 }
 
+h1 {
+  font-family: var(--font-family);
+  font-weight: 200;
+  font-size: 155px;
+  line-height: 1.25;
+}
+
+p {
+  font-size: 30px;
+  line-height: 40px;
+}
+
 #navigation {
-  position: sticky;
   top: 0px;
   width: 100%;
-  padding: 0 10vw;
+  padding: 0 var(--side-padding);
   height: var(--nav-height-L);
   display: flex;
   flex-direction: row;
@@ -62,28 +78,28 @@ nav {
   padding: 0;
 }
 
-.menu li {
-  overflow: hidden;
-  font-size: 20px;
+.menu a {
+  font-size: var(--menu-font-size);
+  text-decoration: none;
+  color: var(--white);
+  display: block;
+  line-height: var(--nav-height-L);
+  height: var(--nav-height-L);
+  text-align: center;
+  width: 100%;
+  z-index: 5;
 }
 
-.menu li a {
-  text-decoration: none;
+.menu a:hover {
+  text-decoration: underline;
+  background-color: var(--menu-hover-color);
   color: var(--white);
 }
 
-.menu li a:hover {
+.menu a:focus {
   text-decoration: underline;
-}
-
-.menu-button-container {
-  display: none;
-  height: 100%;
-  width: var(--hamburger-width);
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--menu-hover-color);
+  color: var(--white);
 }
 
 #menu-toggle {
@@ -94,7 +110,7 @@ nav {
 .menu-button::before,
 .menu-button::after {
   position: absolute;
-  display: block;
+  display: none;
   background-color: var(--black);
   height: var(--hamburger-line-height);
   width: var(--hamburger-width);
@@ -120,6 +136,7 @@ nav {
 
 #hero-content {
   margin-bottom: 50px;
+  padding: 0 var(--side-padding);
 }
 
 #hero-image-container {
@@ -138,13 +155,12 @@ nav {
   width: 100%;
   z-index: 2;
   text-align: right;
-  padding-right: 10%;
 }
 
 #hero-content h1 {
   font-size: 8vw;
   font-family: var(--title-font);
-  color: white;
+  color: var(--white);
   line-height: 1.4;
   z-index: 2;
 }
@@ -160,7 +176,6 @@ nav {
 #portrait-subtitle #subtitle {
   width: 65%;
   line-height: 2;
-  text-align: center;
 }
 
 #portrait-subtitle #subtitle h2 {
@@ -172,7 +187,6 @@ nav {
 
 #portrait-subtitle #portrait {
   width: 35%;
-  padding-right: 10%;
 }
 
 #portrait img {
@@ -196,64 +210,104 @@ p::first-letter {
 
 /* BEGINNING */
 
-#beginning-content {
-  display: flex;
-  justify-items: center;
-  align-items: center;
+#about {
   background-color: var(--beginning-background);
+  padding-bottom: 90px;
 }
 
-#bio-image {
-  width: 20%;
+#beginning-violin {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#beginning-violin img {
+  width: 80%;
+}
+
+#rotatedViolin {
+  display: none;
+}
+
+#beginning-main-content {
+  position: relative;
+  padding: var(--side-padding) var(--side-padding) 0 var(--side-padding);
+  display: flex;
+  justify-items: center;
+  align-items: flex-end;
 }
 
 #beginning-text {
-  width: 60%;
-  padding: 0 4%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 #beginning-text p {
-  font-size: 30px;
+  width: 70%;
 }
 
 #beginnin-title {
   width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#beginnin-title h1 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
 /* Flex career */
 
-#flex-career {
-  display: flex;
-  background-color: #E9C3A9;
+#career {
+  background-color: var(--career-background);
+  padding: 5% var(--side-padding) 0 var(--side-padding);
   width: 100%;
+  display: flex;
   justify-content: center;
 }
 
+#portrait-in-white {
+  display: none;
+  float: right;
+  padding: 0 0 5% 5%;
+}
+
+#hanna-in-white {
+  display: none;
+}
+
+#career-text-content {
+  display: flex;
+  width: 80%;
+}
+
 .career-title {
-  width: 19%;
-  font-family: 'Italiana';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 150px;
-  color: black;
-  writing-mode: sideways-lr;
-  text-align: right;
-  padding-top: 5%;
+  width: 20%;
+  position: relative;
+}
+
+.career-title h1 {
+  transform: rotate(-90deg);
+  position: absolute;
+  transform-origin: 45% 145%;
 }
 
 .career-p1,
 .career-p2 {
-  width: 40%;
-  font-family: 'Playfair Display';
+  width: 50%;
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 400;
-  font-size: 23px;
+  font-size: var(--career-font);
   line-height: 30px;
-  color: black;
-  padding-top: 4%;
-  padding-left: 1%;
-  padding-bottom: 4%;
-  padding-right: 4%;
+  color: var(--text-color);
+  padding: 0 2%;
+  border-left: 1px solid var(--text-color);
 }
 
 .career-p1 p:first-child,
@@ -261,28 +315,55 @@ p::first-letter {
   margin-bottom: 40px;
 }
 
-element {
-  border: 0.5px solid #000000;
-  display: inline-block;
-  align-items: center;
-  margin: 4%;
-}
+/* Adjusting beginning absolute elements */
+@media only screen and (min-width: 744px) and (max-width: 1100px) {
+  #beginning-main-content {
+    padding-top: 20%;
+  }
 
-/* MEDIA */
+  #beginnin-title {
+    width: initial;
+  }
 
-@media only screen and (min-width: 744px) {
-  #portrait img {
-    border: 9px solid var(--white);
+  #career-text-content {
+    flex-direction: column;
+  }
+
+  .career-p1,
+  .career-p2 {
+    width: 100%;
+  }
+
+
+  #portrait-in-white {
+    display: block;
+  }
+
+  #hanna-in-white {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    margin: 5% 0;
   }
 }
 
 @media only screen and (max-width: 744px) {
+  h1 {
+    font-size: 12vw;
+  }
+
+  p {
+    font-size: 4vw;
+    line-height: 5vw;
+  }
+
   #navigation {
     width: 18vw;
     height: var(--nav-height-S);
     display: flex;
     justify-content: center;
     font-family: var(--font-family);
+    padding: 0;
   }
 
   nav {
@@ -291,8 +372,10 @@ element {
     align-items: center;
   }
 
-  .menu-button-container {
-    display: flex;
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
   }
 
   .menu {
@@ -301,30 +384,16 @@ element {
     margin-top: var(--nav-height-S);
     left: 0;
     flex-direction: column;
-    width: 100%;
+    width: 18vw;
     justify-content: center;
     align-items: center;
-    background: #FFF9ED;
+    background: var(--white);
     background: -moz-linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
     background: -webkit-linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
     background: linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
   }
 
-  #menu-toggle~.menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  #menu-toggle:checked~.menu li {
-    height: 40px;
-    font-size: 1rem;
-    padding: 0.5em;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .menu li {
+  .menu a {
     display: flex;
     justify-content: center;
     margin: 0;
@@ -333,12 +402,145 @@ element {
     color: var(--text-color);
   }
 
-  .menu li a {
-    text-decoration: none;
-    color: var(--text-color);
+  #menu-toggle~.menu a {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked~.menu a {
+    height: 40px;
+    line-height: 40px;
+    font-size: 1rem;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #hero-image-container {
+    justify-content: flex-start;
+    padding-left: var(--side-padding);
+  }
+
+  #hero-image-container #on-stage {
+    width: 65%;
+  }
+
+  #portrait-subtitle #portrait {
+    width: 50%;
+  }
+
+  #hero-content h1 {
+    font-size: 13vw;
   }
 
   #portrait img {
     border: 5px solid var(--white);
+  }
+
+  #portrait-subtitle #subtitle h2 {
+    font-size: 4vw;
+  }
+
+  #about {
+    padding: 0 0 var(--side-padding) 5%;
+    background: rgb(252, 217, 180);
+    background: -moz-linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
+    background: linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcd9b4", endColorstr="#b47250", GradientType=1);
+  }
+
+  #beginning-violin {
+    display: none;
+  }
+
+  #beginning-main-content {
+    padding: 0 5%;
+    position: relative;
+  }
+
+  #beginning-text {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  #beginnin-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    width: 100%;
+  }
+
+  #beginnin-title h1 {
+    font-size: 12vw;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+
+  #rotatedViolin {
+    display: block;
+    transform: scaleX(-1);
+    position: absolute;
+    max-height: 100%;
+    height: 100%;
+    right: 0;
+  }
+
+  #rotatedViolin img {
+    max-height: 900px;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #career {
+    flex-direction: column;
+    padding: var(--side-padding);
+  }
+
+  .career-title {
+    margin-bottom: 5%;
+  }
+
+  #career-text-content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .career-title h1 {
+    transform: rotate(0deg);
+    position: relative;
+    transform-origin: 0 0%;
+  }
+
+  .career-p1,
+  .career-p2 {
+    width: 100%;
+    border-left: none;
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 320px) {
+  #about {
+    padding: 0 var(--side-padding) var(--side-padding);
+  }
+
+  #beginning-main-content {
+    padding: 0;
+  }
+  #rotatedViolin {
+    display: none;
+  }
+  
+  #beginning-text p {
+    width: 100%;
+  }
+
+  #portrait-in-white {
+    display: none;
   }
 }

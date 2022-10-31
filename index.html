@@ -10,24 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-  <title>Hannah Hrybkova</title>
+  <title>Hanna Hrybkova</title>
 </head>
 
 <body id="main">
   <header id="navigation">
     <nav>
       <input id="menu-toggle" type="checkbox" />
-      <label class='menu-button-container' for="menu-toggle">
-        <div class='menu-button'></div>
-      </label>
-      <ul class="menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#career">Career</a></li>
-        <li><a href="#photos">Photos</a></li>
-        <li><a href="#video">Video</a></li>
-        <li><a href="#lessons">Lessons</a></li>
-        <li><a href="#contacts">Contacts</a></li>
-      </ul>
+      <label class='menu-button' for="menu-toggle"></label>
+      <div class="menu">
+        <a href="#about">About</a>
+        <a href="#career">Career</a>
+        <a href="#photos">Photos</a>
+        <a href="#video">Video</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#contacts">Contacts</a>
+      </div>
     </nav>
   </header>
   <div id="hero-content">
@@ -48,57 +46,74 @@
       </div>
     </div>
   </div>
-  <div id="beginning-content">
-    <div id="bio-image"></div>
-    <div id="beginning-text">
-      <p>Born in Minsk, Hanna began studying violin at the Akhremchik Gymnasium of Arts with Galina Goncharova and later
-        moved to
-        Saint-Petersburg where she graduated from the Special School of Music, studio of Prof. Savely Shalman, and the
-        St.
-        Petersburg Rimsky-Korsakov Conservatory, studio of Ilya Ioff. Hanna also completed her bachelor's degree as a
-        Woodruff
-        Scholar at the Schwob School of Music where she studied with Professor Sergiu Schwartz. After a year in Los
-        Angeles,
-        studying at UCLA with Professor Movses Pogossian and Varty Manouelian, and playing with the VEM
-        Ensemble-in-Residence,
-        Hanna moved to Houston, TX where she is currently pursuing her Graduate Performance Certificate in the studio of
-        Dr.
-        Kirsten Yon.</p>
+  <div id="about">
+    <div id="beginning-violin">
+      <img src="./media/violin.png" alt="Violin image">
     </div>
-    <div id="beginning-title"></div>
+    <div id="beginning-main-content">
+      <div id="beginning-text">
+        <p>Born in Minsk, Hanna began studying violin at the Akhremchik Gymnasium of Arts with Galina Goncharova and
+          later
+          moved to
+          Saint-Petersburg where she graduated from the Special School of Music, studio of Prof. Savely Shalman, and the
+          St.
+          Petersburg Rimsky-Korsakov Conservatory, studio of Ilya Ioff. Hanna also completed her bachelor's degree as a
+          Woodruff
+          Scholar at the Schwob School of Music where she studied with Professor Sergiu Schwartz. After a year in Los
+          Angeles,
+          studying at UCLA with Professor Movses Pogossian and Varty Manouelian, and playing with the VEM
+          Ensemble-in-Residence,
+          Hanna moved to Houston, TX where she is currently pursuing her Graduate Performance Certificate in the studio
+          of Dr.
+          Kirsten Yon.</p>
+        <div id="beginnin-title">
+          <h1>Beginning</h1>
+        </div>
+      </div>
+      <div id="rotatedViolin">
+        <img src="./media/rotatedViolin.png" alt="Rotated violing for decoration" srcset="">
+      </div>
+    </div>
   </div>
-  <div id="flex-career">
-    <div class="career-title">Career</div>
-    <element></element>
-    <div class="career-p1">
-      <p>Following her concert debut in Italy in 2009, Ms. Hrybkova has performed as a soloist and chamber musician at
-        numerous venues in Belarus, Russia, Europe, and the United States. Hanna most recently appeared as a soloist
-        with the UCLA Philharmonic performing on the legendary “Duke of Alcantara” Stradivarius violin from the UCLA
-        collection, the Schwob Philharmonic, and the Georgia Philharmonic. Hanna regularly performs in different chamber
-        ensembles and her engagements include performing with the UCLA VEM ensemble, that recently gave a West Coast
-        concert tour and a CD recording featuring two world premieres by the Armenian composers Tigran Mansurian and
-        Martin Ulikhanyan, which will be released in December. Other performances include collaboration with the
-        Concertmaster of the LA Philharmonic Martin Chalifour, violinist Boris Abramov, pianist Peter Takacs, and
-        cellist Kyung Eun Choi.
-      </p>
-      <p>Hanna participated in masterclasses and received mentorship from the esteemed violinists Martin Chalifour,
-        Alexander Brussilovsky, Ian Repko, Grigory Kalinovsky, Sally O’Reilly, Movses Pogossian, and Dennis Kim.
-      </p>
+  <div id="career">
+    <div class="career-title">
+      <h1>Career</h1>
     </div>
-    <element></element>
-    <div class="career-p2">
-      <p>Hanna is the First Prize winner of the Atlanta Music Club competition, the Second prize Winner of the Rudolf
-        Barshai String Competition, the Silver Medalist of the Manhattan International Music Competition, the Winner of
-        the “All-Star” Concerto competition; the Winner of 2017-18 and 2019-20 CSU/Schwob Conservatory of Music Concerto
-        Competitions at River Center of the Performing Arts; and the Winner of the Samuel Fordis Young Artist Concerto
-        Competition. Hanna was also awarded the scholarship from the Glazunov Foundation and received scholarships to
-        participate in music festivals among which are the Summer Academy in Murren, Switzerland, and the Montecito
-        Chamber Music Festival.
-      </p>
-      <p>Besides performing solo and chamber, she has also held positions with the Columbus Symphony Orchestra
-        (Columbus, GA), LaGrange Symphony Orchestra (LaGrange, GA), and California Young Artist Symphony (Los Angeles,
-        CA).
-      </p>
+    <div id="career-text-content">
+      <div class="career-p1">
+        <img id="portrait-in-white" src="./media/hannaportraitinwhite.png" alt="Hanna's portrait in white">
+        <p>Following her concert debut in Italy in 2009, Ms. Hrybkova has performed as a soloist and chamber musician at
+          numerous venues in Belarus, Russia, Europe, and the United States. Hanna most recently appeared as a soloist
+          with the UCLA Philharmonic performing on the legendary “Duke of Alcantara” Stradivarius violin from the UCLA
+          collection, the Schwob Philharmonic, and the Georgia Philharmonic. Hanna regularly performs in different
+          chamber
+          ensembles and her engagements include performing with the UCLA VEM ensemble, that recently gave a West Coast
+          concert tour and a CD recording featuring two world premieres by the Armenian composers Tigran Mansurian and
+          Martin Ulikhanyan, which will be released in December. Other performances include collaboration with the
+          Concertmaster of the LA Philharmonic Martin Chalifour, violinist Boris Abramov, pianist Peter Takacs, and
+          cellist Kyung Eun Choi.
+        </p>
+        <p>Hanna participated in masterclasses and received mentorship from the esteemed violinists Martin Chalifour,
+          Alexander Brussilovsky, Ian Repko, Grigory Kalinovsky, Sally O’Reilly, Movses Pogossian, and Dennis Kim.
+        </p>
+        <img id="hanna-in-white" src="./media/hannainwhite.png" alt="" srcset="Hanna in White Jacket">
+      </div>
+      <div class="career-p2">
+        <p>Hanna is the First Prize winner of the Atlanta Music Club competition, the Second prize Winner of the Rudolf
+          Barshai String Competition, the Silver Medalist of the Manhattan International Music Competition, the Winner
+          of
+          the “All-Star” Concerto competition; the Winner of 2017-18 and 2019-20 CSU/Schwob Conservatory of Music
+          Concerto
+          Competitions at River Center of the Performing Arts; and the Winner of the Samuel Fordis Young Artist Concerto
+          Competition. Hanna was also awarded the scholarship from the Glazunov Foundation and received scholarships to
+          participate in music festivals among which are the Summer Academy in Murren, Switzerland, and the Montecito
+          Chamber Music Festival.
+        </p>
+        <p>Besides performing solo and chamber, she has also held positions with the Columbus Symphony Orchestra
+          (Columbus, GA), LaGrange Symphony Orchestra (LaGrange, GA), and California Young Artist Symphony (Los Angeles,
+          CA).
+        </p>
+      </div>
     </div>
   </div>
 </body>

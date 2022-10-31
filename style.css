@@ -36,6 +36,18 @@ p::first-letter {
   margin-left: 2em;
 }
 
+h1 {
+  font-family: var(--font-family);
+  font-weight: 200;
+  font-size: 155px;
+  line-height: 1.25;
+}
+
+p {
+  font-size: 30px;
+  line-height: 40px;
+}
+
 #navigation {
   top: 0px;
   width: 100%;
@@ -220,8 +232,6 @@ nav {
 }
 
 #beginning-text p {
-  font-size: 30px;
-  line-height: 40px;
   width: 70%;
 }
 
@@ -233,33 +243,38 @@ nav {
 }
 
 #beginnin-title h1 {
-  font-family: var(--font-family);
+  /* font-family: var(--font-family);
   font-weight: 200;
   font-size: 155px;
-  line-height: 1.25;
+  line-height: 1.25; */
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
 
 /* Flex career */
 
-#flex-career {
-  display: flex;
+#career-content {
   background-color: #E9C3A9;
+  padding: 5% 20% 0 10%;
   width: 100%;
+  display: flex;
   justify-content: center;
 }
 
+#portrait-in-white {
+  display: none;
+  float: right;
+  padding: 0 0 5% 5%;
+}
+
+#hanna-in-white {
+  display: none;
+}
+
 .career-title {
-  width: 19%;
-  font-family: 'Italiana';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 150px;
-  color: black;
-  writing-mode: sideways-lr;
-  text-align: right;
-  padding-top: 5%;
+  width: 20%;
+  /* transform: rotate(-90deg);
+  transform-origin: 97% 17%; */
 }
 
 .career-p1,
@@ -271,22 +286,13 @@ nav {
   font-size: 23px;
   line-height: 30px;
   color: black;
-  padding-top: 4%;
-  padding-left: 1%;
-  padding-bottom: 4%;
-  padding-right: 4%;
+  padding: 0 2%;
+  border-left: 1px solid black;
 }
 
 .career-p1 p:first-child,
 .career-p2 p:first-child {
   margin-bottom: 40px;
-}
-
-element {
-  border: 0.5px solid #000000;
-  display: inline-block;
-  align-items: center;
-  margin: 4%;
 }
 
 /* Adjusting beginning absolute elements */
@@ -301,6 +307,15 @@ element {
 }
 
 @media only screen and (max-width: 744px) {
+  h1 {
+    font-size: 12vw;
+  }
+
+  p {
+    font-size: 4vw;
+    line-height: 5vw;
+  }
+
   #navigation {
     width: 18vw;
     height: var(--nav-height-S);
@@ -384,7 +399,7 @@ element {
   }
 
   #beginning-content {
-    padding: 0 0 0 5%;
+    padding: 0 0 10% 5%;
     background: rgb(252, 217, 180);
     background: -moz-linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
@@ -405,11 +420,6 @@ element {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
-  }
-
-  #beginning-text p {
-    font-size: 4vw;
-    line-height: 5vw;
   }
 
   #beginnin-title {
@@ -440,11 +450,38 @@ element {
     height: 100%;
     object-fit: contain;
   }
+
+  #career-content {
+    flex-direction: column;
+    padding: 10%;
+  }
+
+  .career-title {
+    margin-bottom: 5%;
+  }
+
+  #portrait-in-white {
+    display: block;
+  }
+
+  #hanna-in-white {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    margin: 5% 0;
+  }
+
+  .career-p1,
+  .career-p2 {
+    width: 100%;
+    border-left: none;
+    text-align: justify;
+  }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 320px) {
   #beginning-content {
-    padding: 0 10%;
+    padding: 0 10% 10%;
   }
 
   #beginning-main-content {
@@ -456,5 +493,9 @@ element {
   
   #beginning-text p {
     width: 100%;
+  }
+
+  #portrait-in-white {
+    display: none;
   }
 }

@@ -102,17 +102,6 @@ nav {
   color: var(--white);
 }
 
-
-.menu-button-container {
-  display: none;
-  height: 100%;
-  width: var(--hamburger-width);
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 #menu-toggle {
   display: none;
 }
@@ -121,7 +110,7 @@ nav {
 .menu-button::before,
 .menu-button::after {
   position: absolute;
-  display: block;
+  display: none;
   background-color: var(--black);
   height: var(--hamburger-line-height);
   width: var(--hamburger-width);
@@ -383,8 +372,10 @@ p::first-letter {
     align-items: center;
   }
 
-  .menu-button-container {
-    display: flex;
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
   }
 
   .menu {

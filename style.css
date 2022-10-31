@@ -209,6 +209,16 @@ nav {
   border: 11px solid var(--white);
 }
 
+#menu-items li a:visited {
+  color: #FFF9ED;
+  text-decoration: none;
+}
+
+p::first-letter {
+  color: #000000;
+  margin-left: 2em;
+}
+
 /* BEGINNING */
 
 #about {

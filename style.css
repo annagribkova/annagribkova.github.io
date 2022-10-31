@@ -9,6 +9,10 @@
   --black: #000;
   --hero-background: #B47250;
   --beginning-background: #FCD9B4;
+  --career-background: #E9C3A9;
+  --menu-hover-color: #99522E;
+  --menu-font-size: 20px;
+  --career-font: 23px;
   --font-family: 'Playfair Display', serif;
   --title-font: 'Amelaryas', serif;
   --hamburger-line-height: 1px;
@@ -16,6 +20,7 @@
   --hamburger-margin: 6px;
   --nav-height-L: 100px;
   --nav-height-S: 60px;
+  --side-padding: 10%;
 }
 
 * {
@@ -51,7 +56,7 @@ p {
 #navigation {
   top: 0px;
   width: 100%;
-  padding: 0 10vw;
+  padding: 0 var(--side-padding);
   height: var(--nav-height-L);
   display: flex;
   flex-direction: row;
@@ -74,7 +79,7 @@ nav {
 }
 
 .menu a {
-  font-size: 20px;
+  font-size: var(--menu-font-size);
   text-decoration: none;
   color: var(--white);
   display: block;
@@ -87,13 +92,13 @@ nav {
 
 .menu a:hover {
   text-decoration: underline;
-  background-color: #99522E;
+  background-color: var(--menu-hover-color);
   color: var(--white);
 }
 
 .menu a:focus {
   text-decoration: underline;
-  background-color: #99522E;
+  background-color: var(--menu-hover-color);
   color: var(--white);
 }
 
@@ -142,7 +147,7 @@ nav {
 
 #hero-content {
   margin-bottom: 50px;
-  padding: 0 10%;
+  padding: 0 var(--side-padding);
 }
 
 #hero-image-container {
@@ -166,7 +171,7 @@ nav {
 #hero-content h1 {
   font-size: 8vw;
   font-family: var(--title-font);
-  color: white;
+  color: var(--white);
   line-height: 1.4;
   z-index: 2;
 }
@@ -229,7 +234,7 @@ nav {
 
 #beginning-main-content {
   position: relative;
-  padding: 10% 10% 0 10%;
+  padding: var(--side-padding) var(--side-padding) 0 var(--side-padding);
   display: flex;
   justify-items: center;
   align-items: flex-end;
@@ -260,8 +265,8 @@ nav {
 /* Flex career */
 
 #career {
-  background-color: #E9C3A9;
-  padding: 5% 10% 0 10%;
+  background-color: var(--career-background);
+  padding: 5% var(--side-padding) 0 var(--side-padding);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -296,14 +301,14 @@ nav {
 .career-p1,
 .career-p2 {
   width: 50%;
-  font-family: 'Playfair Display';
+  font-family: var(--font-family);
   font-style: normal;
   font-weight: 400;
-  font-size: 23px;
+  font-size: var(--career-font);
   line-height: 30px;
-  color: black;
+  color: var(--text-color);
   padding: 0 2%;
-  border-left: 1px solid black;
+  border-left: 1px solid var(--text-color);
 }
 
 .career-p1 p:first-child,
@@ -381,7 +386,7 @@ nav {
     width: 18vw;
     justify-content: center;
     align-items: center;
-    background: #FFF9ED;
+    background: var(--white);
     background: -moz-linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
     background: -webkit-linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
     background: linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
@@ -414,7 +419,7 @@ nav {
 
   #hero-image-container {
     justify-content: flex-start;
-    padding-left: 10%;
+    padding-left: var(--side-padding);
   }
 
   #hero-image-container #on-stage {
@@ -438,7 +443,7 @@ nav {
   }
 
   #about {
-    padding: 0 0 10% 5%;
+    padding: 0 0 var(--side-padding) 5%;
     background: rgb(252, 217, 180);
     background: -moz-linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(252, 217, 180, 1) 24%, rgba(180, 114, 80, 1) 100%);
@@ -492,7 +497,7 @@ nav {
 
   #career {
     flex-direction: column;
-    padding: 10%;
+    padding: var(--side-padding);
   }
 
   .career-title {
@@ -520,7 +525,7 @@ nav {
 
 @media only screen and (min-width: 0px) and (max-width: 320px) {
   #about {
-    padding: 0 10% 10%;
+    padding: 0 var(--side-padding) var(--side-padding);
   }
 
   #beginning-main-content {

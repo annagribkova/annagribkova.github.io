@@ -243,10 +243,6 @@ nav {
 }
 
 #beginnin-title h1 {
-  /* font-family: var(--font-family);
-  font-weight: 200;
-  font-size: 155px;
-  line-height: 1.25; */
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
@@ -255,7 +251,7 @@ nav {
 
 #career-content {
   background-color: #E9C3A9;
-  padding: 5% 20% 0 10%;
+  padding: 5% 10% 0 10%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -271,15 +267,25 @@ nav {
   display: none;
 }
 
+#career-text-content {
+  display: flex;
+  width: 80%;
+}
+
 .career-title {
   width: 20%;
-  /* transform: rotate(-90deg);
-  transform-origin: 97% 17%; */
+  position: relative;
+}
+
+.career-title h1 {
+  transform: rotate(-90deg);
+  position: absolute;
+  transform-origin: 45% 145%;
 }
 
 .career-p1,
 .career-p2 {
-  width: 40%;
+  width: 50%;
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
@@ -303,6 +309,27 @@ nav {
 
   #beginnin-title {
     width: initial;
+  }
+
+  #career-text-content {
+    flex-direction: column;
+  }
+
+  .career-p1,
+  .career-p2 {
+    width: 100%;
+  }
+
+
+  #portrait-in-white {
+    display: block;
+  }
+
+  #hanna-in-white {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    margin: 5% 0;
   }
 }
 
@@ -460,15 +487,15 @@ nav {
     margin-bottom: 5%;
   }
 
-  #portrait-in-white {
-    display: block;
+  #career-text-content {
+    flex-direction: column;
+    width: 100%;
   }
 
-  #hanna-in-white {
-    display: block;
-    width: 100%;
-    object-fit: contain;
-    margin: 5% 0;
+  .career-title h1 {
+    transform: rotate(0deg);
+    position: relative;
+    transform-origin: 0 0%;
   }
 
   .career-p1,

@@ -16,37 +16,33 @@ function changeNavBackground() {
 
 // Expandable Career Section
 
-// ********** CHANGE HERE TOO **********
 function handleCareerExpand() {
-  // Find a second text block in career section by its id (starts with "Hanna participated in masterclasses...")
-  // Find a third text block in career section by its id ("Hanna is the First Prize winner...")
-  // Find a fourth text block in career section by its id.
-  // Find Hanna's second image in career section by its id (Should be after 2nd text block)
-  // Target word "Read" in "Read full career" sentense by its id.
-
-  // If word === "Read"
-    // Change text content of the word to "Hide" (Google tip: 'JS how to change text content of HTML node')
-    // Add a class 'arrowUp' to a button that was just clicked (Google tip: 'JS how to add a class to and HTML node')
-    // Add style display: block to a second paragraph
-    // Add style display: block to a third paragraph
-    // Add style display: block to a fourth paragraph
-    // Add style display: block to Hanna's image
-  // Else
-    // Change word back to "Read"
-    // Remove a class 'arrowUp' from a button that was just clicked
-    // Remove style arrtibute from a second paragraph
-    // Remove style arrtibute from a third paragraph
-    // Remove style arrtibute from a fourth paragraph
-    // Remove style arrtibute from Hanna's image
+  const careerAction = document.getElementById('career-action');
+  const careerReadHide = document.getElementsByClassName('career-read-hide');
+  console.log(careerReadHide);
+  if (careerAction.textContent === 'Read') {
+    careerAction.textContent = 'Hide';
+    careerButton.classList.add('arrowUp');
+    // for (let i = 0; i < careerReadHide.length; i++) {
+    // const content = careerReadHide[i];
+    // content.style.display = 'block'; 
+    // } 
+    Array.from(careerReadHide).forEach(element => element.style.display = 'block');
+  } else {
+    careerAction.textContent = 'Read';
+    careerButton.classList.remove('arrowUp');
+    // for (let i = 0; i < careerReadHide.length; i++) {
+    // const content = careerReadHide[i];
+    // content.removeAttribute('style'); 
+    // } 
+    Array.from(careerReadHide).forEach(element => element.removeAttribute('style'));
+  }
 }
-
 // Navigation hamburger that triggers it's background change
 const checkbox = document.getElementById('menu-toggle');
 // Arrow that expands career text 
 const careerButton = document.getElementById('career-arrow');
-
 // Event listeners
 checkbox.addEventListener('click', changeNavBackground);
-
-// ********** CHANGE HERE TOO **********
-// Add an event listener  to careerButton that triggers a function handleCareerExpand on click
+// Triggers a function that shows content on click
+careerButton.addEventListener('click', handleCareerExpand); 

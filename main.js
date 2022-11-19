@@ -46,22 +46,21 @@ checkbox.addEventListener('click', changeNavBackground);
 // Triggers a function that shows content on click
 careerButton.addEventListener('click', handleCareerExpand); 
 
-const step = 0.025;
+// Photo Gallery
+
+const step = 0.225;
 const imgSize = 40;
-// 1, 10, 19, 28, 37, 46, 55, 64, 73
-const transformXNext = [0.025, 0.25, 0.475, 0.7, 0.925, 1.15, 1.375, 1.6, 1.825];
-// -113, -104, -95, -86, -77, -68, -59, -50, -41
-const transformXPrevious = [-2.825, -2.6, -2.375, -2.15, -1.925, -1.7, -1.475, -1.25, -1.025];
+const prevMinOffset = -2.825;
+const nexMinOffset = 0.025;
+
 const size = [-0.55, -0.4, -0.25, -0.1, 0.05, 0.2, 0.35, 0.5, 0.65]
 
-// Photo Gallery
-//start added by Chase
 function setupCoverflow() {
   let coverflowContainers = Array.from(document.getElementsByClassName('coverflow'));
 
   coverflowContainers.forEach((containerElement) => {
     const coverflow = {};
-    let preconstrows, nextArrows;
+    let prevArrow, nexArrow;
 
     //capture coverflow elements
     coverflow.container = containerElement;
@@ -79,8 +78,8 @@ function setupCoverflow() {
     coverflow.container.dataset.coverflowPosition = coverflow.position;
 
     //get prev/next arrows
-    preconstrows = Array.from(coverflow.container.getElementsByClassName("prev-arrow"));
-    nextArrows = Array.from(coverflow.container.getElementsByClassName("next-arrow"));
+    prevArrow = Array.from(coverflow.container.getElementsByClassName("prev-arrow"));
+    nexArrow = Array.from(coverflow.container.getElementsByClassName("next-arrow"));
 
     //add event handlers
     function setPrevImage() {
@@ -111,10 +110,10 @@ function setupCoverflow() {
           break;
       }
     }
-    preconstrows.forEach(function(preconstrow) {
+    prevArrow.forEach(function(preconstrow) {
       preconstrow.addEventListener('click', setPrevImage);
     });
-    nextArrows.forEach(function(nextArrow) {
+    nexArrow.forEach(function(nextArrow) {
       nextArrow.addEventListener('click', setNextImage);
     });
     coverflow.images.forEach(function(image) {
@@ -123,16 +122,23 @@ function setupCoverflow() {
     window.addEventListener('keyup', onKeyPress);
   });
 }
+const generateOffsetArray = (min, step, length) => {
+  return new Array(length).fill(0).map((_, i) => min + step * i);
+}
 
 const changeImagePosition = (coverFlowPosition, images) => {
-  console.log(coverFlowPosition)
+  const transformXNext = generateOffsetArray(nexMinOffset, step, images.length);
+  const transformXPrev = generateOffsetArray(prevMinOffset, step, images.length);
+  const sizes = 
+
   images.forEach((image, i) => {
-    let offset = '-50%';
-    let scale = 1;
+    let offset, scale;
     if (i < coverFlowPosition) {
       //image is on the left from center
       const idx = coverFlowPosition - i;
-      offset = `${imgSize * transformXPrevious[transformXPrevious.length - idx]}vw`;
+
+      // console.log(prevMinOffset + (step * (coverFlowPosition + i + 1)))
+      offset = `${imgSize * transformXPrev[transformXPrev.length - idx]}vw`;
       // scale = size[coverFlowPosition + i];
       scale = size[size.length - (coverFlowPosition - i)]
     } else if (i > coverFlowPosition) {
@@ -147,5 +153,20 @@ const changeImagePosition = (coverFlowPosition, images) => {
   })
 
 }
+
+// const step = 0.225;
+// const imgSize = 40;
+// const nextMinOffset = 0.025;
+// const prevMinOffset = -2.825;
+
+// 1, 10, 19, 28, 37, 46, 55, 64, 73
+// const transformXNext = [0.025, 0.25, 0.475, 0.7, 0.925, 1.15, 1.375, 1.6, 1.825];
+
+// -113, -104, -95, -86, -77, -68, -59, -50, -41
+// const transformXPrev = [-2.825, -2.6, -2.375, -2.15, -1.925, -1.7, -1.475, -1.25, -1.025];
+
+// const size = [-0.55, -0.4, -0.25, -0.1, 0.05, 0.2, 0.35, 0.5, 0.65]
+
+//min + step*idx
 
 setupCoverflow();

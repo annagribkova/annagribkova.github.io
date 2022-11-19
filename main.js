@@ -19,7 +19,6 @@ function changeNavBackground() {
 function handleCareerExpand() {
   const careerAction = document.getElementById('career-action');
   const careerReadHide = document.getElementsByClassName('career-read-hide');
-  console.log(careerReadHide);
   if (careerAction.textContent === 'Read') {
     careerAction.textContent = 'Hide';
     careerButton.classList.add('arrowUp');
@@ -47,60 +46,26 @@ checkbox.addEventListener('click', changeNavBackground);
 // Triggers a function that shows content on click
 careerButton.addEventListener('click', handleCareerExpand); 
 
+const step = 0.025;
+const imgSize = 40; //vw
+// 1, 10, 19, 28, 37, 46, 55, 64, 73
+const transformXNext = [0.025, 0.25, 0.475, 0.7, 0.925, 1.15, 1.375, 1.6, 1.825];
+// -113, -104, -95, -86, -77, -68, -59, -50, -41
+const transformXPrevious = [-2.825, -2.6, -2.375, -2.15, -1.925, -1.7, -1.475, -1.25, -1.025];
+const size = [-0.55, -0.4, -0.25, -0.1, 0.05, 0.2, 0.35, 0.5, 0.65]
 
 // Photo Gallery
 //start added by Chase
-var a = document.getElementsByTagName("a");
-var cfImg = document.getElementsByClassName("coverflow__image")
+function setupCoverflow() {
+  let coverflowContainers = Array.from(document.getElementsByClassName('coverflow'));
 
-var scaleI = 0;
-for (scaleI; scaleI < a.length; scaleI++) {
-  if (scaleI === 3) {
-    continue;
-  } else {
-    a[scaleI].style.cursor = "default";
-    a[scaleI].addEventListener("click", prevDef);
-  }
-}
-
-function prevDef(e) {
-  e.preventDefault();
-}
-
-function forScale(coverflowPos) {
-  for (scaleI = 0; scaleI < a.length; scaleI++) {
-    a[scaleI].style.cursor = "default";
-    a[scaleI].addEventListener("click", prevDef);
-  }
-  for (scaleI = 0; scaleI < cfImg.length; scaleI++) {
-    if (cfImg[scaleI].getAttribute("data-coverflow-index") == coverflowPos) {
-      cfImg[scaleI].parentElement.style.cursor = "pointer";
-      cfImg[scaleI].parentElement.removeEventListener("click", prevDef);
-    }
-  }
-}
-//end added by Chase
-
-function setupCoverflow(coverflowContainer) {
-  var coverflowContainers;
-
-  if (typeof coverflowContainer !== "undefined") {
-    if (Array.isArray(coverflowContainer)) {
-      coverflowContainers = coverflowContainer;
-    } else {
-      coverflowContainers = [coverflowContainer];
-    }
-  } else {
-    coverflowContainers = Array.prototype.slice.apply(document.getElementsByClassName('coverflow'));
-  }
-
-  coverflowContainers.forEach(function(containerElement) {
-    var coverflow = {};
-    var prevArrows, nextArrows;
+  coverflowContainers.forEach((containerElement) => {
+    const coverflow = {};
+    let preconstrows, nextArrows;
 
     //capture coverflow elements
     coverflow.container = containerElement;
-    coverflow.images = Array.prototype.slice.apply(containerElement.getElementsByClassName('coverflow__image'));
+    coverflow.images = Array.from(containerElement.getElementsByClassName('coverflow__image'));
     coverflow.position = Math.floor(coverflow.images.length / 2) + 1;
 
     //set indicies on images
@@ -108,36 +73,32 @@ function setupCoverflow(coverflowContainer) {
       coverflowImage.dataset.coverflowIndex = i + 1;
     });
 
-    //set initial position
+    changeImagePosition(coverflow.position - 1, coverflow.images);
+
+    //set initial position // >>>>> 5
     coverflow.container.dataset.coverflowPosition = coverflow.position;
 
     //get prev/next arrows
-    prevArrows = Array.prototype.slice.apply(coverflow.container.getElementsByClassName("prev-arrow"));
-    nextArrows = Array.prototype.slice.apply(coverflow.container.getElementsByClassName("next-arrow"));
+    preconstrows = Array.from(coverflow.container.getElementsByClassName("prev-arrow"));
+    nextArrows = Array.from(coverflow.container.getElementsByClassName("next-arrow"));
 
     //add event handlers
     function setPrevImage() {
       coverflow.position = Math.max(1, coverflow.position - 1);
       coverflow.container.dataset.coverflowPosition = coverflow.position;
-      //call the functin forScale added
-      forScale(coverflow.position);
+      changeImagePosition(coverflow.position - 1, coverflow.images);
     }
 
     function setNextImage() {
       coverflow.position = Math.min(coverflow.images.length, coverflow.position + 1);
       coverflow.container.dataset.coverflowPosition = coverflow.position;
-      //call the function Chase added
-      forScale(coverflow.position);
+      changeImagePosition(coverflow.position - 1, coverflow.images);
     }
 
     function jumpToImage(evt) {
       coverflow.position = Math.min(coverflow.images.length, Math.max(1, evt.target.dataset.coverflowIndex));
       coverflow.container.dataset.coverflowPosition = coverflow.position;
-      //start added by Chase
-      setTimeout(function() {
-        forScale(coverflow.position);
-      }, 1);
-      //end added by Chase
+      changeImagePosition(coverflow.position - 1, coverflow.images);
     }
 
     function onKeyPress(evt) {
@@ -150,8 +111,8 @@ function setupCoverflow(coverflowContainer) {
           break;
       }
     }
-    prevArrows.forEach(function(prevArrow) {
-      prevArrow.addEventListener('click', setPrevImage);
+    preconstrows.forEach(function(preconstrow) {
+      preconstrow.addEventListener('click', setPrevImage);
     });
     nextArrows.forEach(function(nextArrow) {
       nextArrow.addEventListener('click', setNextImage);
@@ -161,6 +122,30 @@ function setupCoverflow(coverflowContainer) {
     });
     window.addEventListener('keyup', onKeyPress);
   });
+}
+
+const changeImagePosition = (coverFlowPosition, images) => {
+  console.log(coverFlowPosition)
+  images.forEach((image, i) => {
+    let offset = '-50%';
+    let scale = 1;
+    if (i < coverFlowPosition) {
+      //image is on the left from center
+      offset = `${imgSize * [transformXPrevious[coverFlowPosition + i + 1]]}vw`;
+      console.log(coverFlowPosition)
+      // scale = size[coverFlowPosition + i];
+      scale = size[size.length - (coverFlowPosition - i)]
+    } else if (i > coverFlowPosition) {
+      offset = `${imgSize * transformXNext[i - coverFlowPosition - 1]}vw`;
+      scale = size[size.length - (i - coverFlowPosition)];
+    } else {
+      offset = '-50%';
+      scale = 1;
+    }
+    image.style.transform = `translateX(${offset}) scale(${scale})`;
+    image.style.webkitTransform = `translateX(${offset}) scale(${scale})`;
+  })
+
 }
 
 setupCoverflow();

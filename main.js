@@ -47,7 +47,7 @@ checkbox.addEventListener('click', changeNavBackground);
 careerButton.addEventListener('click', handleCareerExpand); 
 
 const step = 0.025;
-const imgSize = 40; //vw
+const imgSize = 40;
 // 1, 10, 19, 28, 37, 46, 55, 64, 73
 const transformXNext = [0.025, 0.25, 0.475, 0.7, 0.925, 1.15, 1.375, 1.6, 1.825];
 // -113, -104, -95, -86, -77, -68, -59, -50, -41
@@ -131,8 +131,8 @@ const changeImagePosition = (coverFlowPosition, images) => {
     let scale = 1;
     if (i < coverFlowPosition) {
       //image is on the left from center
-      offset = `${imgSize * [transformXPrevious[coverFlowPosition + i + 1]]}vw`;
-      console.log(coverFlowPosition)
+      const idx = coverFlowPosition - i;
+      offset = `${imgSize * transformXPrevious[transformXPrevious.length - idx]}vw`;
       // scale = size[coverFlowPosition + i];
       scale = size[size.length - (coverFlowPosition - i)]
     } else if (i > coverFlowPosition) {

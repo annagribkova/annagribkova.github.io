@@ -48,13 +48,6 @@ careerButton.addEventListener('click', handleCareerExpand);
 
 // Photo Gallery
 
-const step = 0.225;
-const imgSize = 40;
-const prevMinOffset = -2.825;
-const nexMinOffset = 0.025;
-
-const size = [-0.55, -0.4, -0.25, -0.1, 0.05, 0.2, 0.35, 0.5, 0.65]
-
 function setupCoverflow() {
   let coverflowContainers = Array.from(document.getElementsByClassName('coverflow'));
 
@@ -122,14 +115,21 @@ function setupCoverflow() {
     window.addEventListener('keyup', onKeyPress);
   });
 }
-const generateOffsetArray = (min, step, length) => {
+const generateOffsetOrSizeArray = (min, step, length) => {
   return new Array(length).fill(0).map((_, i) => min + step * i);
 }
 
 const changeImagePosition = (coverFlowPosition, images) => {
-  const transformXNext = generateOffsetArray(nexMinOffset, step, images.length);
-  const transformXPrev = generateOffsetArray(prevMinOffset, step, images.length);
-  const sizes = 
+  const imgSize = 40;
+  const step = images.length / imgSize;
+  const prevMinOffset = -2.825;
+  const nexMinOffset = 0.025;
+  const minSize = -0.55;
+  const sizeStep = 0.15;
+  
+  const transformXNext = generateOffsetOrSizeArray(nexMinOffset, step, images.length);
+  const transformXPrev = generateOffsetOrSizeArray(prevMinOffset, step, images.length);
+  const sizes = generateOffsetOrSizeArray(minSize, sizeStep, images.length);
 
   images.forEach((image, i) => {
     let offset, scale;
@@ -140,10 +140,10 @@ const changeImagePosition = (coverFlowPosition, images) => {
       // console.log(prevMinOffset + (step * (coverFlowPosition + i + 1)))
       offset = `${imgSize * transformXPrev[transformXPrev.length - idx]}vw`;
       // scale = size[coverFlowPosition + i];
-      scale = size[size.length - (coverFlowPosition - i)]
+      scale = sizes[sizes.length - (coverFlowPosition - i)]
     } else if (i > coverFlowPosition) {
       offset = `${imgSize * transformXNext[i - coverFlowPosition - 1]}vw`;
-      scale = size[size.length - (i - coverFlowPosition)];
+      scale = sizes[sizes.length - (i - coverFlowPosition)];
     } else {
       offset = '-50%';
       scale = 1;

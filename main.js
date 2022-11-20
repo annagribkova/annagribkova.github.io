@@ -71,8 +71,8 @@ function setupCoverflow() {
     coverflow.container.dataset.coverflowPosition = coverflow.position;
 
     //get prev/next arrows
-    prevArrow = Array.from(coverflow.container.getElementsByClassName("prev-arrow"));
-    nexArrow = Array.from(coverflow.container.getElementsByClassName("next-arrow"));
+    prevArrow = document.getElementById("prev-arrow");
+    nexArrow = document.getElementById("next-arrow");
 
     //add event handlers
     function setPrevImage() {
@@ -103,12 +103,8 @@ function setupCoverflow() {
           break;
       }
     }
-    prevArrow.forEach(function(preconstrow) {
-      preconstrow.addEventListener('click', setPrevImage);
-    });
-    nexArrow.forEach(function(nextArrow) {
-      nextArrow.addEventListener('click', setNextImage);
-    });
+    prevArrow.addEventListener('click', setPrevImage);
+    nexArrow.addEventListener('click', setNextImage);
     coverflow.images.forEach(function(image) {
       image.addEventListener('click', jumpToImage);
     });
@@ -120,53 +116,42 @@ const generateOffsetOrSizeArray = (min, step, length) => {
 }
 
 const changeImagePosition = (coverFlowPosition, images) => {
-  const imgSize = 40;
-  const step = images.length / imgSize;
-  const prevMinOffset = -2.825;
-  const nexMinOffset = 0.025;
-  const minSize = -0.55;
-  const sizeStep = 0.15;
+  // Need to change size in CSS as well
+  const imgSize = 25;
+  const step = imgSize / 100;
+  const offsetRight = imgSize / 1000;
+  const offsetLeft = -1 - (offsetRight + (step * (images.length - 1)));
+  const minSize = -(imgSize / (imgSize * 10));
+  const sizeStep = imgSize / (imgSize * 10);
+  const maxZIndex = images.length + 1;
   
-  const transformXNext = generateOffsetOrSizeArray(nexMinOffset, step, images.length);
-  const transformXPrev = generateOffsetOrSizeArray(prevMinOffset, step, images.length);
+  const transformXNext = generateOffsetOrSizeArray(offsetRight, step, images.length);
+  const transformXPrev = generateOffsetOrSizeArray(offsetLeft, step, images.length);
   const sizes = generateOffsetOrSizeArray(minSize, sizeStep, images.length);
 
   images.forEach((image, i) => {
-    let offset, scale;
-    if (i < coverFlowPosition) {
+    let offset, scale, zIndex;
+    if (i < coverFlowPosition) { //4
       //image is on the left from center
       const idx = coverFlowPosition - i;
-
-      // console.log(prevMinOffset + (step * (coverFlowPosition + i + 1)))
       offset = `${imgSize * transformXPrev[transformXPrev.length - idx]}vw`;
-      // scale = size[coverFlowPosition + i];
-      scale = sizes[sizes.length - (coverFlowPosition - i)]
+      scale = sizes[sizes.length - (coverFlowPosition - i)];
+      zIndex = maxZIndex - (coverFlowPosition - i);
     } else if (i > coverFlowPosition) {
       offset = `${imgSize * transformXNext[i - coverFlowPosition - 1]}vw`;
       scale = sizes[sizes.length - (i - coverFlowPosition)];
+      zIndex = maxZIndex - (i - coverFlowPosition);
     } else {
       offset = '-50%';
       scale = 1;
+      zIndex = maxZIndex;
     }
+
     image.style.transform = `translateX(${offset}) scale(${scale})`;
     image.style.webkitTransform = `translateX(${offset}) scale(${scale})`;
+    image.style.zIndex = zIndex;
   })
 
 }
-
-// const step = 0.225;
-// const imgSize = 40;
-// const nextMinOffset = 0.025;
-// const prevMinOffset = -2.825;
-
-// 1, 10, 19, 28, 37, 46, 55, 64, 73
-// const transformXNext = [0.025, 0.25, 0.475, 0.7, 0.925, 1.15, 1.375, 1.6, 1.825];
-
-// -113, -104, -95, -86, -77, -68, -59, -50, -41
-// const transformXPrev = [-2.825, -2.6, -2.375, -2.15, -1.925, -1.7, -1.475, -1.25, -1.025];
-
-// const size = [-0.55, -0.4, -0.25, -0.1, 0.05, 0.2, 0.35, 0.5, 0.65]
-
-//min + step*idx
 
 setupCoverflow();

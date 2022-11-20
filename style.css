@@ -21,7 +21,7 @@
   --nav-height-L: 10vw;
   --nav-height-S: 60px;
   --side-padding: 10%;
-  --gallery-image-size: 40vw;
+  --gallery-image-size: 25vw;
 }
 
 * {
@@ -590,16 +590,25 @@ p::first-letter {
 }
 
 /* Photo Gallery */
+#photos {
+  padding: 5% var(--side-padding);
+}
+
+#gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .coverflow {
   position: relative;
-  height: 100vh;
-  padding: 30px;
+  width: 90vw;
+  height: var(--gallery-image-size);
   overflow: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
 }
 
 .coverflow__image {
+  cursor: pointer;
   object-fit: cover;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -627,447 +636,28 @@ p::first-letter {
   height: 10%;
 }
 
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 4;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 3;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 2;
-}
-
-.coverflow[data-coverflow-position="1"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 1;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 4;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 3;
-}
-
-.coverflow[data-coverflow-position="2"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 2;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 4;
-}
-
-.coverflow[data-coverflow-position="3"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 3;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="4"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 4;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="5"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="6"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 4;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="7"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 3;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 4;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="8"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 2;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 3;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 4;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 10;
-}
-
-.coverflow[data-coverflow-position="9"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="1"] {
-  z-index: 1;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="2"] {
-  z-index: 2;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="3"] {
-  z-index: 3;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="4"] {
-  z-index: 4;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="5"] {
-  z-index: 5;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="6"] {
-  z-index: 6;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="7"] {
-  z-index: 7;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="8"] {
-  z-index: 8;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="9"] {
-  z-index: 9;
-}
-
-.coverflow[data-coverflow-position="10"] .coverflow__image[data-coverflow-index="10"] {
-  z-index: 10;
-}
-
-.prev-arrow,
-.next-arrow {
+#prev-arrow,
+#next-arrow {
   cursor: pointer;
-  z-index: 10;
-  position: absolute;
-  top: 50%;
-  padding: 1.5rem 2rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 3rem;
-  line-height: 3rem;
-  background: transparent;
-  border-radius: 1rem;
-  -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
   -webkit-transition: color 200ms, background 200ms;
   transition: color 200ms, background 200ms;
   z-index: 11;
 }
 
-.prev-arrow:hover,
-.next-arrow:hover,
-.prev-arrow:focus,
-.next-arrow:focus {
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(0, 0, 0, 0.5);
+#prev-arrow svg,
+#next-arrow svg {
+  width: 40px;
+  height: 40px;
 }
 
-.prev-arrow {
+#prev-arrow {
   left: 0%;
+  transform: rotate(90deg);
+  margin-right: 3vw;
 }
 
-.prev-arrow:before {
-  content: "❮";
-}
-
-.next-arrow {
+#next-arrow {
   right: 0%;
-}
-
-.next-arrow:after {
-  content: "❯";
+  transform: rotate(-90deg);
+  margin-left: 3vw;
 }

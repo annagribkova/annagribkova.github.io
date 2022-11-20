@@ -155,3 +155,11 @@ const changeImagePosition = (coverFlowPosition, images) => {
 }
 
 setupCoverflow();
+
+function sendEmail() {
+  var formattedBody = "FirstLine \n Second Line \n Third Line";
+  var mailToLink = "mailto:xviola@d-d.me?body=" + encodeURIComponent(formattedBody);
+  window.location.href = mailToLink;
+}
+
+// sendEmail();

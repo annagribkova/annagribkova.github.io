@@ -20,7 +20,7 @@
   --hamburger-line-height: 1px;
   --hamburger-width: 18px;
   --hamburger-margin: 6px;
-  --nav-height-L: 10vw;
+  --nav-height-L: 120px;
   --nav-height-S: 60px;
   --side-padding: 10%;
   --gallery-image-size: 25vw;
@@ -190,7 +190,7 @@ nav {
 }
 
 #portrait-subtitle #portrait {
-  width: 35%;
+  width: 30%;
 }
 
 #portrait img {

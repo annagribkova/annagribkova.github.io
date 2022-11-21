@@ -653,9 +653,9 @@ footer {
     justify-content: center;
     align-items: center;
     background: var(--white);
-    background: -moz-linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
-    background: -webkit-linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
-    background: linear-gradient(180.18deg, #FFF9ED 0.16%, #fff9ed4d 76.48%, #fff9ed00 100.66%);
+    background: -moz-linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
+    background: -webkit-linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
+    background: linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
   }
 
   .menu a {
@@ -668,18 +668,17 @@ footer {
   }
 
   #menu-toggle~.menu a {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 0;
+    display: none;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    height: 3vw;
   }
 
   #menu-toggle:checked~.menu a {
-    height: 40px;
-    line-height: 40px;
-    font-size: 1rem;
-    padding: 0.5em;
+    display: block;
+    margin: 10px 0px;
+    font-size: 2vw;
+    line-height: 2vw;
+    /* padding: 0.5em; */
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 

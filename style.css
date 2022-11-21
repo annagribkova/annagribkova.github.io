@@ -35,6 +35,7 @@
 body {
   background-color: var(--hero-background);
   height: 100%;
+  position: relative;
 }
 
 /* Fonts */
@@ -552,6 +553,67 @@ footer {
   background-color: #D27D60;
   text-align: center;
   padding: 2% 0;
+}
+
+/* LOADER */
+
+#loader-container {
+  position: absolute;
+  top: 0;
+}
+
+#loader-container, #loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D27D60;
+}
+
+.loading-state {
+  max-height: 100vh;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 999;
+}
+
+#loader svg {
+  width: 50px;
+  fill: #21130d;
+}
+
+#loader #first {
+  animation: move 0.5s linear infinite;
+  animation-direction: alternate-reverse;
+  position: relative;
+}
+
+#loader #second {
+  animation: move 0.5s linear infinite;
+  animation-direction: alternate-reverse;
+  animation-delay: 0.22s;
+  position: relative;
+}
+
+#loader #third {
+  animation: move 0.5s linear infinite;
+  animation-direction: alternate-reverse;
+  animation-delay: 0.4s;
+  position: relative;
+}
+
+@keyframes move {
+  from {
+    top: -15px;
+    fill-opacity: 0.1;
+
+  }
+
+  to {
+    top: 0;
+    fill-opacity: 1;
+  }
 }
 
 /* Max size for h1 */

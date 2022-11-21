@@ -1,3 +1,10 @@
+// document.addEventListener('readystatechange', (event) => {
+//   if (document.readyState === "complete") {
+//     document.getElementById('main').classList.remove('loading-state');
+//     document.getElementById('loader-container').style.display = 'none';
+//     document.getElementById('loader-container').classList.remove('loading-state');
+//   }
+// });
 // Naviggation
 
 function changeNavBackground() {

@@ -39,7 +39,7 @@ body {
 
 /* Fonts */
 
-p::first-letter {
+#career p::first-letter, #beginning p::first-letter {
   color: #000000;
   margin-left: 2em;
 }
@@ -207,11 +207,6 @@ nav {
   text-decoration: none;
 }
 
-p::first-letter {
-  color: #000000;
-  margin-left: 2em;
-}
-
 /* BEGINNING */
 
 #about {
@@ -330,6 +325,11 @@ p::first-letter {
   align-items: center;
   visibility: hidden;
   padding: 10px 0;
+}
+
+#desktop-hidden-expand-career svg {
+  width: 40px;
+  height: 40px;
 }
 
 .arrowUp {
@@ -538,6 +538,12 @@ textarea {
   justify-content: flex-end;
 }
 
+#contacts svg {
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
+}
+
 .social {
   display: flex;
   align-items: center;
@@ -550,6 +556,7 @@ footer {
   padding: 2% 0;
 }
 
+/* Max size for h1 */
 @media screen and (min-width: 1300px) {
   h1 {
     font-size: 150px;
@@ -819,5 +826,17 @@ footer {
 
   #lessons {
     margin-bottom: 10%;
+  }
+
+  #desktop-hidden-expand-career svg, 
+  #prev-arrow svg,
+  #next-arrow svg, 
+  #contacts svg {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  #contacts svg {
+    margin-right: 3vw;
   }
 }

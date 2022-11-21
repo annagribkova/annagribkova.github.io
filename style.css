@@ -47,7 +47,8 @@ p::first-letter {
 h1 {
   font-family: var(--font-family);
   font-weight: 200;
-  font-size: 155px;
+  font-size: 10vw;  
+  /* font-size: 155px; */
   line-height: 1.25;
 }
 
@@ -537,8 +538,26 @@ textarea {
   justify-content: flex-end;
 }
 
+.social {
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  width: 100%;;
+  background-color: #D27D60;
+  text-align: center;
+  padding: 2% 0;
+}
+
+@media screen and (min-width: 1300px) {
+  h1 {
+    font-size: 150px;
+  }
+}
+
 /* Adjusting beginning absolute elements */
-@media only screen and (min-width: 744px) and (max-width: 110vw) {
+@media only screen and (min-width: 744px) and (max-width: 1110px) {
   #beginning-main-content {
     padding-top: 20%;
   }
@@ -570,6 +589,18 @@ textarea {
   #career-text-content #part-3,
   #career-text-content #part-4 {
     display: none;
+  }
+
+  #connect {
+    flex-direction: column;
+  }
+
+  #lessons, #contacts {
+    width: 100%;
+  }
+
+  #lessons {
+    margin-bottom: 10%;
   }
 }
 
@@ -772,6 +803,23 @@ textarea {
   #quote-author {
     font-size: 3vw;
   }
+
+  #connect {
+    flex-direction: column;
+  }
+
+  #form-main {
+    width: 100%;
+  }
+
+  #lessons,
+  #contacts {
+    width: 100%;
+  }
+
+  #lessons {
+    margin-bottom: 10%;
+  }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 320px) {
@@ -806,6 +854,15 @@ textarea {
   }
 
   #quote {
+    width: 100%;
+  }
+
+  #connect {
+    flex-direction: column;
+  }
+
+  #lessons,
+  #contacts {
     width: 100%;
   }
 }

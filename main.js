@@ -19,21 +19,16 @@ function changeNavBackground() {
 function handleCareerExpand() {
   const careerAction = document.getElementById('career-action');
   const careerReadHide = document.getElementsByClassName('career-read-hide');
+
   if (careerAction.textContent === 'Read') {
     careerAction.textContent = 'Hide';
     careerButton.classList.add('arrowUp');
-    // for (let i = 0; i < careerReadHide.length; i++) {
-    // const content = careerReadHide[i];
-    // content.style.display = 'block'; 
-    // } 
     Array.from(careerReadHide).forEach(element => element.style.display = 'block');
   } else {
     careerAction.textContent = 'Read';
     careerButton.classList.remove('arrowUp');
-    // for (let i = 0; i < careerReadHide.length; i++) {
-    // const content = careerReadHide[i];
-    // content.removeAttribute('style'); 
-    // } 
+    careerAction.scrollIntoView();
+
     Array.from(careerReadHide).forEach(element => element.removeAttribute('style'));
   }
 }

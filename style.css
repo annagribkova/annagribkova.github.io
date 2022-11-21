@@ -678,7 +678,6 @@ footer {
     margin: 10px 0px;
     font-size: 2vw;
     line-height: 2vw;
-    /* padding: 0.5em; */
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 

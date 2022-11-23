@@ -23,7 +23,8 @@
   --nav-height-L: 120px;
   --nav-height-S: 60px;
   --side-padding: 10%;
-  --gallery-image-size: 25vw;
+  --gallery-image-width: 25vw;
+  --gallery-image-height: 28vw;
 }
 
 * {
@@ -354,7 +355,7 @@ nav {
 .coverflow {
   position: relative;
   width: 90vw;
-  height: var(--gallery-image-size);
+  height: var(--gallery-image-height);
   overflow: hidden;
 }
 
@@ -365,8 +366,8 @@ nav {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: var(--gallery-image-size);
-  height: var(--gallery-image-size);
+  width: var(--gallery-image-width);
+  height: var(--gallery-image-height);
   -webkit-transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: all 350ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -424,7 +425,7 @@ nav {
 
 #quote {
   width: 60%;
-  padding: 40px;
+  padding: 5%;
   border: 1px solid var(--black);
 }
 
@@ -475,7 +476,7 @@ textarea {
 
 .form {
   width: 100%;
-  padding: 30px;
+  padding: 5%;
   border: 1px solid var(--black);
   display: flex;
   justify-content: center;
@@ -555,6 +556,10 @@ footer {
   padding: 2% 0;
 }
 
+footer p {
+  font-size: 1.5vw;
+}
+
 /* LOADER */
 
 #loader-container {
@@ -620,6 +625,10 @@ footer {
 @media screen and (min-width: 1300px) {
   h1 {
     font-size: 150px;
+  }
+
+  footer p {
+    font-size: 20px;
   }
 }
 
@@ -896,5 +905,9 @@ footer {
 
   #contacts svg {
     margin-right: 3vw;
+  }
+
+  #submit-btn {
+    font-size: 3vw;
   }
 }

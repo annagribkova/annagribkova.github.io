@@ -47,7 +47,7 @@ body {
 }
 
 h1 {
-  font-family: var(--font-family);
+  font-family: var(--title-font);
   font-weight: 200;
   font-size: 10vw;  
   line-height: 1.25;
@@ -170,8 +170,12 @@ nav {
   font-size: 16vw;
   font-family: var(--title-font);
   color: var(--white);
-  line-height: 0.8;
+  line-height: 0.9;
   z-index: 2;
+}
+
+#hero-description {
+  width: 100%;
 }
 
 #portrait-subtitle {
@@ -183,7 +187,7 @@ nav {
 }
 
 #portrait-subtitle #subtitle {
-  width: 65%;
+  width: 100%;
   line-height: 2;
 }
 
@@ -191,17 +195,21 @@ nav {
   width: 100%;
   font-family: var(--title-font);
   color: var(--white);
-  font-size: 2vw;
+  font-size: 3.5vw;
+  line-height: 0.8;
   font-weight: 400;
 }
 
 #portrait-subtitle #portrait {
-  width: 30%;
+  width: 40vw;
+  height: 28vw;
 }
 
 #portrait img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: 0 30%;
 }
 
 #portrait img {
@@ -252,6 +260,7 @@ nav {
 
 #beginning-text p {
   width: 70%;
+  font-family: var(--font-family);
 }
 
 #beginnin-title {
@@ -273,7 +282,7 @@ nav {
   padding: 5% var(--side-padding);
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #portrait-in-white {
@@ -295,7 +304,7 @@ nav {
 }
 
 .career-title {
-  width: 20%;
+  width: 12%;
   position: relative;
 }
 
@@ -303,6 +312,7 @@ nav {
   transform: rotate(-90deg);
   position: absolute;
   transform-origin: 45% 145%;
+  line-height: 1;
 }
 
 .career-p1,
@@ -315,12 +325,19 @@ nav {
   line-height: 30px;
   color: var(--text-color);
   padding: 0 2%;
+  /* padding-right: 9%; */
   border-left: 1px solid var(--text-color);
 }
 
 .career-p1 p:first-child,
 .career-p2 p:first-child {
   margin-bottom: 40px;
+}
+
+.career-p1 p,
+.career-p2 p {
+  font-size: 23px;
+  line-height: 30px;
 }
 
 #desktop-hidden-expand-career {
@@ -496,12 +513,12 @@ textarea {
 
 .feedback-input {
   width: 100%;
-  font-family: var(--font-family);
+  font-family: var(--title-font);
   font-weight: 500;
   font-size: 18px;
   border-radius: 0;
   line-height: 22px;
-  background-color: #fbfbfb;
+  background-color: var(--white);
   padding: 13px 13px 13px 24px;
   margin-bottom: 10px;
   width: 100%;
@@ -512,8 +529,25 @@ textarea {
   border: 3px solid rgba(0, 0, 0, 0);
 }
 
+.feedback-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #381D1E;
+  opacity: 1;
+  /* Firefox */
+}
+
+.feedback-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #381D1E;
+}
+
+.feedback-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #381D1E;
+}
+
 .feedback-input:focus {
-  background: #fff;
+  background: var(--white);
   box-shadow: 0;
   border: 3px solid #3498db;
   outline: none;
@@ -525,18 +559,18 @@ textarea {
 }
 
 #submit-btn {
-  font-family: var(--font-family);
+  font-family: var(--title-font);
   width: 70%;
   cursor: pointer;
   background-color: var(--white);
-  color: var(--black);
+  color: #381D1E;
   font-size: 24px;
   padding-top: 22px;
   padding-bottom: 22px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-  font-weight: 700;
+  font-weight: 400;
   border: none;
 }
 
@@ -565,6 +599,8 @@ footer {
 
 footer p {
   font-size: 1.5vw;
+  font-family: var(--title-font);
+  letter-spacing: 2px;
 }
 
 /* LOADER */
@@ -705,7 +741,8 @@ footer p {
     font-size: 12vw;
   }
 
-  p {
+  p, .career-p1 p,
+  .career-p2 p {
     font-size: 4vw;
     line-height: 5vw;
   }
@@ -720,19 +757,17 @@ footer p {
   }
 
   #portrait-subtitle #portrait {
-    width: 50%;
+    width: 70vw;
+    height: 43vw;
   }
-
-  /* #hero-content h1 {
-    font-size: 13vw;
-  } */
 
   #portrait img {
     border: 5px solid var(--white);
   }
 
   #portrait-subtitle #subtitle h2 {
-    font-size: 4vw;
+    font-size: 5vw;
+    line-height: 1.3;
   }
 
   #about {

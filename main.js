@@ -44,7 +44,7 @@ const checkbox = document.getElementById('menu-toggle');
 // Arrow that expands career text 
 const careerButton = document.getElementById('career-arrow');
 // Event listeners
-checkbox.addEventListener('click', changeNavBackground);
+// checkbox.addEventListener('click', changeNavBackground);
 // Triggers a function that shows content on click
 careerButton.addEventListener('click', handleCareerExpand); 
 

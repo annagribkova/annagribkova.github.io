@@ -654,6 +654,12 @@ footer p {
 
   #portrait-in-white {
     display: block;
+    width: 224px;
+  }
+
+  #hanna-in-white {
+    max-width: 624px;
+
   }
 
   #desktop-hidden-expand-career {

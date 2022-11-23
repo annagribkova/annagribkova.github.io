@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Amelaryas';
-  src: url('./fonts/Amelaryas.otf');
+  font-family: 'Gallient';
+  src: url('./fonts/Gallient.ttf');
 }
 
 :root {
@@ -16,7 +16,7 @@
   --quote-font-size: 30px;
   --quote-author-font-size: 21px;
   --font-family: 'Playfair Display', serif;
-  --title-font: 'Amelaryas', serif;
+  --title-font: 'Gallient', serif;
   --hamburger-line-height: 1px;
   --hamburger-width: 18px;
   --hamburger-margin: 6px;
@@ -167,10 +167,10 @@ nav {
 }
 
 #hero-content h1 {
-  font-size: 8vw;
+  font-size: 16vw;
   font-family: var(--title-font);
   color: var(--white);
-  line-height: 1.4;
+  line-height: 0.8;
   z-index: 2;
 }
 
@@ -192,6 +192,7 @@ nav {
   font-family: var(--title-font);
   color: var(--white);
   font-size: 2vw;
+  font-weight: 400;
 }
 
 #portrait-subtitle #portrait {
@@ -343,7 +344,7 @@ nav {
 
 /* Photo Gallery */
 #photos {
-  padding: 5% var(--side-padding);
+  padding: var(--side-padding);
   background: rgb(210, 125, 96);
   background: -moz-linear-gradient(0deg, rgba(210, 125, 96, 1) 0%, rgba(188, 137, 114, 1) 100%);
   background: -webkit-linear-gradient(0deg, rgba(210, 125, 96, 1) 0%, rgba(188, 137, 114, 1) 100%);
@@ -429,7 +430,7 @@ nav {
 }
 
 #quote {
-  width: 60%;
+  width: 80%;
   padding: 5%;
   border: 1px solid var(--black);
 }
@@ -451,7 +452,7 @@ nav {
 #connect {
   background-color: #D27D60;
   padding: 5% var(--side-padding);
-  padding-top: 0;
+  /* padding-top: 0; */
   display: flex;
   justify-content: center;
 }
@@ -541,6 +542,7 @@ textarea {
 
 #contacts {
   justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #contacts svg {
@@ -707,66 +709,6 @@ footer p {
     font-size: 4vw;
     line-height: 5vw;
   }
-/* 
-
-  #navigation {
-    width: 18vw;
-    height: var(--nav-height-S);
-    display: flex;
-    justify-content: center;
-    font-family: var(--font-family);
-    padding: 0;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .menu-button,
-  .menu-button::before,
-  .menu-button::after {
-    display: block;
-  }
-
-  .menu {
-    position: absolute;
-    top: 0;
-    margin-top: var(--nav-height-S);
-    left: 0;
-    flex-direction: column;
-    width: 18vw;
-    justify-content: center;
-    align-items: center;
-    background: var(--white);
-    background: -moz-linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
-    background: -webkit-linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
-    background: linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
-  }
-
-  .menu a {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0.5em 0;
-    width: 100%;
-    color: var(--text-color);
-  }
-
-  #menu-toggle~.menu a {
-    display: none;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    height: 3vw;
-  }
-
-  #menu-toggle:checked~.menu a {
-    display: block;
-    margin: 10px 0px;
-    font-size: 2vw;
-    line-height: 2vw;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  } */
 
   #hero-image-container {
     justify-content: flex-start;
@@ -781,9 +723,9 @@ footer p {
     width: 50%;
   }
 
-  #hero-content h1 {
+  /* #hero-content h1 {
     font-size: 13vw;
-  }
+  } */
 
   #portrait img {
     border: 5px solid var(--white);
@@ -889,11 +831,12 @@ footer p {
   }
 
   #quote-text {
-    font-size: 5vw;
+    font-size: 4vw;
+    font-weight: 600;
   }
 
   #quote-author {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 
   #connect {
@@ -902,6 +845,11 @@ footer p {
 
   #form-main {
     width: 100%;
+  }
+
+  #contacts {
+    justify-content: flex-end;
+    align-items: flex-start;
   }
 
   #lessons,
@@ -933,8 +881,7 @@ footer p {
 }
 
 @media only screen and (min-width: 0px) and (max-width: 743px) {
-
-#navigation {
+  #navigation {
     width: 18vw;
     height: var(--nav-height-S);
     display: flex;

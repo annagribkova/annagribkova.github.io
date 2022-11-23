@@ -58,6 +58,11 @@ p {
   line-height: 40px;
 }
 
+h5 {
+  font-size: 3vw;
+  font-weight: 400;
+}
+
 #navigation {
   top: 0px;
   width: 100%;
@@ -632,6 +637,13 @@ footer p {
   }
 }
 
+@media screen and (min-width: 1025px){
+  h5 {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
 /* Adjusting beginning absolute elements */
 @media only screen and (min-width: 744px) and (max-width: 1110px) {
   #beginning-main-content {
@@ -686,7 +698,7 @@ footer p {
   }
 }
 
-@media only screen and (max-width: 744px) {
+@media only screen and (max-width: 1024px) {
   h1 {
     font-size: 12vw;
   }
@@ -695,7 +707,7 @@ footer p {
     font-size: 4vw;
     line-height: 5vw;
   }
-
+/* 
 
   #navigation {
     width: 18vw;
@@ -754,7 +766,7 @@ footer p {
     font-size: 2vw;
     line-height: 2vw;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
+  } */
 
   #hero-image-container {
     justify-content: flex-start;
@@ -807,7 +819,7 @@ footer p {
 
   #beginnin-title {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 5%;
     width: 100%;
@@ -829,7 +841,7 @@ footer p {
   }
 
   #rotatedViolin img {
-    max-height: 900px;
+    /* max-height: 900px; */
     height: 100%;
     object-fit: contain;
   }
@@ -907,6 +919,8 @@ footer p {
   #contacts svg {
     width: 6vw;
     height: 6vw;
+    min-width: 24px;
+    min-height: 24px;
   }
 
   #contacts svg {
@@ -916,4 +930,67 @@ footer p {
   #submit-btn {
     font-size: 3vw;
   }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 743px) {
+
+#navigation {
+    width: 18vw;
+    height: var(--nav-height-S);
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-family);
+    padding: 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: var(--nav-height-S);
+    left: 0;
+    flex-direction: column;
+    width: 18vw;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+    background: -moz-linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
+    background: -webkit-linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
+    background: linear-gradient(180.18deg, #FFF9ED 45.16%, #fff9ed4d 83.48%, #fff9ed00 99.66%);
+  }
+
+  .menu a {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: var(--text-color);
+  }
+
+  #menu-toggle~.menu a {
+    display: none;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    height: 3vw;
+  }
+
+  #menu-toggle:checked~.menu a {
+    display: block;
+    margin: 10px 0px;
+    font-size: 2vw;
+    line-height: 2vw;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
 }

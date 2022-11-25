@@ -882,11 +882,17 @@ footer p {
     flex-wrap: wrap;
   }
 
-  #mobile-gallery img {
+  .mobile-img-container {
     width: 250px;
     height: 300px;
     margin: 5%;
     flex-grow: 1;
+    object-fit: cover;
+  }
+
+  #mobile-gallery img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 

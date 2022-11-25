@@ -891,13 +891,9 @@ footer p {
     flex-grow: 1;
   }
 
-  .align-img-left {
+  /* .align-img-left {
     object-position: left;
-  }
-
-  .align-img-right {
-    object-position: left;
-  }
+  } */
 
   #quote {
     width: 100%;

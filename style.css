@@ -63,6 +63,10 @@ h5 {
   font-weight: 400;
 }
 
+img {
+  object-fit: cover;
+}
+
 #navigation {
   top: 0px;
   width: 100%;
@@ -196,7 +200,7 @@ nav {
   font-family: var(--title-font);
   color: var(--white);
   font-size: 3.5vw;
-  line-height: 0.8;
+  line-height: 2.8;
   font-weight: 400;
 }
 
@@ -361,7 +365,7 @@ nav {
 
 /* Photo Gallery */
 #photos {
-  padding: var(--side-padding);
+  padding: 5% var(--side-padding);
   background: rgb(210, 125, 96);
   background: -moz-linear-gradient(0deg, rgba(210, 125, 96, 1) 0%, rgba(188, 137, 114, 1) 100%);
   background: -webkit-linear-gradient(0deg, rgba(210, 125, 96, 1) 0%, rgba(188, 137, 114, 1) 100%);
@@ -682,12 +686,15 @@ footer p {
   }
 }
 
-/* Adjusting beginning absolute elements */
-@media only screen and (min-width: 744px) and (max-width: 1110px) {
+@media screen and (min-width: 744px) and (max-width: 1550px) {
   #beginning-main-content {
     padding-top: 20%;
   }
+  
+}
 
+/* Adjusting beginning absolute elements */
+@media only screen and (min-width: 744px) and (max-width: 1110px) {
   #beginnin-title {
     width: initial;
   }
@@ -861,6 +868,10 @@ footer p {
     display: none;
   }
 
+  #photos,#connect {
+    padding: var(--side-padding);
+  }
+
   #quote {
     width: 100%;
   }
@@ -880,6 +891,10 @@ footer p {
 
   #form-main {
     width: 100%;
+  }
+
+  #contacts-content h1 {
+    margin-bottom: 20px;
   }
 
   #contacts {
@@ -908,6 +923,8 @@ footer p {
 
   #contacts svg {
     margin-right: 3vw;
+    min-width: 30px;
+    min-height: 30px;
   }
 
   #submit-btn {

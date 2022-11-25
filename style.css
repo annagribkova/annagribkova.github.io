@@ -889,7 +889,7 @@ footer p {
     height: 40vw;
     margin: 5%;
     flex-grow: 1;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   /* .align-img-left {

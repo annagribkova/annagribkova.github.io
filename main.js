@@ -17,7 +17,6 @@ function changeNavBackground() {
   } else {
     nav.style.backgroundColor = '#B47250';
     nav.style.transition = 'background-color 100ms ease-out';
-    nav.style.transitionDelay = '200ms';
   }
 }
 

@@ -38,14 +38,6 @@ function handleCareerExpand() {
     Array.from(careerReadHide).forEach(element => element.removeAttribute('style'));
   }
 }
-// Navigation hamburger that triggers it's background change
-const checkbox = document.getElementById('menu-toggle');
-// Arrow that expands career text 
-const careerButton = document.getElementById('career-arrow');
-// Event listeners
-checkbox.addEventListener('click', changeNavBackground);
-// Triggers a function that shows content on click
-careerButton.addEventListener('click', handleCareerExpand); 
 
 // Photo Gallery
 
@@ -151,16 +143,25 @@ const changeImagePosition = (coverFlowPosition, images) => {
     image.style.transform = `translateX(${offset}) scale(${scale})`;
     image.style.webkitTransform = `translateX(${offset}) scale(${scale})`;
     image.style.zIndex = zIndex;
-  })
-
+  });
 }
 
-setupCoverflow();
-
 function sendEmail() {
-  var formattedBody = "FirstLine \n Second Line \n Third Line";
-  var mailToLink = "mailto:xviola@d-d.me?body=" + encodeURIComponent(formattedBody);
+  const body = document.getElementById('comment').value;
+  var mailToLink = "mailto:viola@d-d.me?body=" + encodeURIComponent(body);
   window.location.href = mailToLink;
 }
 
+// Navigation hamburger that triggers it's background change
+const checkbox = document.getElementById('menu-toggle');
+// Arrow that expands career text 
+const careerButton = document.getElementById('career-arrow');
+// Event listeners
+checkbox.addEventListener('click', changeNavBackground);
+// Triggers a function that shows content on click
+careerButton.addEventListener('click', handleCareerExpand); 
+const submitButton = document.getElementById('submit-btn');
+submitButton.addEventListener('click', sendEmail);
+
 // sendEmail();
+setupCoverflow();

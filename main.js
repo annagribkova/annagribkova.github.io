@@ -146,9 +146,23 @@ const changeImagePosition = (coverFlowPosition, images) => {
   });
 }
 
+function handleInputChange(input) {
+  if (input.value.length > 0) {
+    input.classList.remove('missing-info');
+  } else {
+    input.classList.add('missing-info');
+    input.placeholder = 'Please, fill in the form'
+  }
+}
+
 function sendEmail() {
-  const body = document.getElementById('comment').value;
-  var mailToLink = "mailto:viola@d-d.me?body=" + encodeURIComponent(body);
+  const textElement = document.getElementById('comment');
+  const nameElement = document.getElementById('name');
+  const providedEmail = document.getElementById('email');
+  const textWithName = textElement.value + '\n\n' + ` Name: ${nameElement.value} \n Please, reply to: ${providedEmail.value}`;
+  const subject = 'Hi Hanna, an email from your website'
+
+  const mailToLink = `mailto:hrybkovahanna@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(textWithName)}`;
   window.location.href = mailToLink;
 }
 
@@ -163,5 +177,4 @@ careerButton.addEventListener('click', handleCareerExpand);
 const submitButton = document.getElementById('submit-btn');
 submitButton.addEventListener('click', sendEmail);
 
-// sendEmail();
 setupCoverflow();

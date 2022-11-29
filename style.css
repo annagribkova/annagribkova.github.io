@@ -509,7 +509,7 @@ textarea {
 
 .feedback-input {
   width: 100%;
-  font-family: var(--title-font);
+  font-family: var(--font-family);
   font-weight: 500;
   font-size: 18px;
   border-radius: 0;
@@ -528,6 +528,7 @@ textarea {
 .feedback-input::placeholder {
   color: #381D1E;
   opacity: 1;
+  font-family: var(--title-font);
 }
 
 .feedback-input:-ms-input-placeholder {

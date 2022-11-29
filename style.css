@@ -53,9 +53,10 @@ h1 {
   line-height: 1.25;
 }
 
-p {
+p, .social a {
   font-size: 30px;
   line-height: 40px;
+  font-family: var(--font-family);
 }
 
 h5 {
@@ -588,6 +589,11 @@ textarea {
   align-items: center;
 }
 
+.social a {
+  text-decoration: none;
+  color: var(--black);
+}
+
 footer {
   width: 100%;;
   background-color: #D27D60;
@@ -742,7 +748,8 @@ footer p {
     font-size: 12vw;
   }
 
-  p, .career-p1 p,
+  p,
+  .social a, .career-p1 p,
   .career-p2 p {
     font-size: 4vw;
     line-height: 5vw;

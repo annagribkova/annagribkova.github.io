@@ -566,6 +566,12 @@ textarea {
   border: none;
 }
 
+#submit-info {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.24;
+}
+
 #contacts {
   justify-content: flex-end;
   align-items: flex-end;

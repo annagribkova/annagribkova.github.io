@@ -157,10 +157,11 @@ nav {
   width: 100%;
   padding-top: 2vw;
   z-index: -1;
+  width: 50%;
 }
 
 #hero-image-container #on-stage {
-  width: 50%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -755,10 +756,6 @@ footer p {
 
   #hero-image-container {
     justify-content: flex-start;
-    padding-left: var(--side-padding);
-  }
-
-  #hero-image-container #on-stage {
     width: 65%;
   }
 
@@ -895,9 +892,9 @@ footer p {
     height: 100%;
   }
 
-  /* .align-img-left {
+  .align-img-left {
     object-position: left;
-  } */
+  }
 
   #quote {
     width: 100%;

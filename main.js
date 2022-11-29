@@ -1,11 +1,9 @@
-// document.addEventListener('readystatechange', (event) => {
-//   if (document.readyState === "complete") {
-//     document.getElementById('main').classList.remove('loading-state');
-//     document.getElementById('loader-container').style.display = 'none';
-//     document.getElementById('loader-container').classList.remove('loading-state');
-//   }
-// });
-// Naviggation
+window.addEventListener('DOMContentLoaded', (event) => {
+  const body = document.getElementById('main');
+  const loader = document.getElementById('loader-container');
+  body.classList.remove('isLoading');
+  loader.style.display = 'none';
+});
 
 function changeNavBackground() {
   const nav = document.getElementById('navigation');
